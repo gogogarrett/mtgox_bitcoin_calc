@@ -11,4 +11,9 @@ class HomeController < ApplicationController
     render json: ProfitMan.lets_get_rich(dollars, buy_cost, sell_cost, params[:mtgox_percent])
   end
 
+  def check_updated_values
+    buy = MtGox.ticker.buy; sell = MtGox.ticker.sell
+    render json: { buy_cost: buy, sell_cost: sell }
+  end
+
 end
