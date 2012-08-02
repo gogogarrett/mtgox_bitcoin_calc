@@ -1,1 +1,37 @@
-<h3>Home</h3>
+<div class="row">
+  <section id="mtgox_form" class="span4">
+    <h3>Mtgox Bitcoin Calc</h3>
+
+    <%= form_tag "/check_profits" do %>
+
+      <div class="field">
+        <%= label_tag :dollars %>
+        <%= number_field_tag :dollars, {}, placeholder: "HOW MANY DOLLARS" %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :buy_cost %>
+        <%= number_field_tag :buy_cost, {}, value: @buy, step: "any" %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :sell_cost %>
+        <%= number_field_tag :sell_cost, {}, value: @sell, step: "any"  %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :mtgox_percent %>
+        <%= number_field_tag :mtgox_percent, {}, value: "0.006", step: "any"  %>%
+      </div>
+
+      <div class="actions">
+        <%= submit_tag "Submit", class: 'btn btn-primary' %>
+      </div>
+
+    <% end %>
+  </section>
+
+  <section id="response" class="span8"> </section>
+  <%= render "response_template.js" %>
+</div>
+

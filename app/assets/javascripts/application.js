@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= reqiure 'handlebars-1.0.0.beta.6'
 //= require_tree .
