@@ -7,12 +7,13 @@
     <title><%= content_for?(:title) ? yield(:title) : "Mtgox Bitcoin Calc" %></title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
   <body>
+
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
@@ -20,6 +21,7 @@
         </div>
       </nav>
     </header>
+
     <div id="main" role="main">
       <div class="container">
         <div class="content">
@@ -29,10 +31,18 @@
               <%= yield %>
             </div>
           </div>
+
           <footer>
+           <div class="row">
+            <div class="span12">
+              <p>Site by
+                <%= link_to "@gogogarrett", "http://twitter.com/gogogarrett", target: "_blank" %>
+              </p>
+            </div>
           </footer>
         </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
+      </div>
+    </div>
+
   </body>
 </html>
